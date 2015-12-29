@@ -135,11 +135,19 @@ typedef NS_ENUM(NSInteger,OrientationSectionType){
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     // 提示段: 选择常在地、定位城市
     if (section == OrientationSectionTypeTip) {
-        return 2;
+        if (self.openOrientation) {
+            return 2;
+        }else{
+            return 1;
+        }
     }
     
     if (section == OrientationSectionTypeOrientation){
-        return 1;
+        if (self.openOrientation) {
+            return 1;
+        }else{
+            return 0;
+        }
     }
     
     return [super tableView:tableView numberOfRowsInSection:section];

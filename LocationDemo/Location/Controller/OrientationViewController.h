@@ -13,4 +13,5 @@
 
 @interface OrientationViewController : ListSelectViewBaseController
 @property(nonatomic,copy) NSString *selectedString;
+@property(nonatomic,assign) BOOL openOrientation;
 @end
